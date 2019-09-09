@@ -1,0 +1,56 @@
+{{#each orderdata}}
+<form action="{{../server}}{{../orderToStock}}" method="post">
+<ul class="order-items collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header order">
+            <div class="row">
+                <div class="col s2">
+                    {{Norex}}
+                </div>
+                <div class="col s2">
+                    {{Color}}
+                </div>
+                <div class="col s2">
+                    {{ProjId}}
+                </div>
+                <div class="col s2">
+                    {{Qty}}
+                </div>
+            </div>
+        </div>
+        <div class="collapsible-body order">
+            <div class="row">
+                <div class="col s4">
+                    <input type="hidden" name="Norex" value="{{Norex}}">
+                    <input type="hidden" name="Color" value="{{Color}}">
+                    <input type="hidden" name="pid" value="{{ProjId}}">
+                    <input type="hidden" name="Qty" value="{{Qty}}">
+                    <div class="input-field">
+                        <select name="loc" required>
+                            <option value="1">Location 1</option>
+                            <option value="2">Location 2</option>
+                        </select>
+                        <label>Site</label>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="input-field">
+                        <input type="text" name="los">
+                        <label>Location</label>
+                    </div>
+                </div>
+                <div class="col s4">
+                    <div class="input-field">
+                        <input type="text" name="rec">
+                        <label>Received Qty</label>
+                    </div>
+                </div>
+                <div class="col s12 center">
+                    <input type="submit" value="received" class="btn">
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+</form>
+{{/each}}

@@ -1,0 +1,76 @@
+{{#each inventoryDisplay}}
+<!--        start:item to repeat-->
+<ul class="incentory-items collapsible" data-collapsible="accordion">
+    <li>
+        <div class="collapsible-header">
+            <div class="row">
+                <div class="col s1">
+                    <!--checkbox-->
+                    <input type="checkbox" name="checkboxstoSelect" class="filled-in" onclick="selectCheckbox()" id="checkbox{{@index}}" value="{{Norex}}|{{Color}}|{{Location}}|{{LocOnSite}}|{{ProjId}}|{{Qty}}" />
+                    <label for="checkbox{{@index}}"></label>
+                    <input type="number" name="rqty">
+                </div>
+                <div class="col s1">
+                    <!--norex-->
+                    {{Norex}}
+                </div>
+                <div class="col s1">
+                    {{ProjId}}
+                </div>
+                <div class="col s2">
+                    {{Color}}
+                </div>
+                <div class="col s1">
+                    {{Location}}
+                </div>
+                <div class="col s2">
+                    {{LocOnSite}}
+                </div>
+                <div class="col s1">
+                    {{Qty}}
+                </div>
+            </div>
+        </div>
+        <div class="collapsible-body">
+            <div class="row">
+                <div class="col s1">
+                    <div class="norexImg">
+                        <img src="{{../server}}application/norexIMG/{{Norex}}" class="">
+                    </div>
+                </div>
+                <div class="col s1">
+                    {{ASTRO}}
+                </div>
+                <div class="col s1">
+                    {{WINSYS}}
+                </div>
+                <div class="col s1">
+                    {{KEYMARK}}
+                </div>
+                <div class="col s1">
+                    {{DESCRIPTION}}
+                </div>
+                <div class="col s1">
+                    {{MODEL}}
+                </div>
+                <div class="col s1">
+                    {{LBFT}}
+                </div>
+                <div class="col s1">
+                    {{SH}}
+                </div>
+                <div class="col s1">
+                    {{CAVITY}}
+                </div>
+                <div class="col s1">
+                    EASCO
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+<!--end: item to repeat-->
+
+{{/each}}
+
+

@@ -1,0 +1,47 @@
+{{#each orderData}}
+    <ul class="order-items collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header bom yellow lighten-4">
+                <div class="row">
+                    <div class="col s1">
+                        {{PO}}
+                    </div>
+                    <div class="col s1">
+                        {{Projectid}}: projname
+                    </div>
+                    <div class="col s1">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s1">
+                        {{Description}}
+                    </div>
+                    <div class="col s1">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{KeymarkDieNo}}
+                    </div>
+                    <div class="col s2">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Qty}}
+                    </div>
+                    <div class="col s1">
+                        {{WeightxFeet}}
+                    </div>
+                    <div class="col s1">
+                        {{OrderLength}}
+                    </div>
+                    <div class="col s1">
+                        {{TotalLbs}}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <!--end:placeorder-->
+
+{{/each}}

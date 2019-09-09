@@ -1,0 +1,85 @@
+{{#each orderData}}
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="manifestOrder collapsible-header yellow lighten-4">
+                <div class="row yellow lighten-2">
+                    <div class="col s2 red lighten-4">
+                        <b>No:{{No}}</b>
+                    </div>
+                    <div class="col s4">
+                        PID:
+                    </div>
+                    <div class="col s2">
+                        NID:
+                    </div>
+                    <div class="col s2">
+                        Astro:
+                    </div>
+                    <div class="col s2">
+                        Keymark:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2">
+                        PO:{{PO}}
+                    </div>
+                    <div class="col s4">
+                        {{Projectid}}-ProjectName
+                    </div>
+                    <div class="col s2">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s2">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s2">
+                        {{KeymarkDieNo}}
+                    </div>
+                </div>
+                <div class="row yellow lighten-2">
+                    <div class="col s6">
+                        Finish:
+                    </div>
+                    <div class="col s1">
+                        Qty:
+                    </div>
+                    <div class="col s1">
+                        WtxFt:
+                    </div>
+                    <div class="col s2">
+                        Length:
+                    </div>
+                    <div class="col s2">
+                        NetWt:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Qty}}
+                    </div>
+                    <div class="col s1">
+                        {{WeightxFeet}}
+                    </div>
+                    <div class="col s2">
+                        {{OrderLength}}
+                    </div>
+                    <div class="col s2">
+                        {{TotalLbs}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        Description:{{Description}}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <!--end:placeorder-->
+
+{{/each}}

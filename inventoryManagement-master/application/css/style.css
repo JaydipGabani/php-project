@@ -1,0 +1,453 @@
+body {
+    background-color: #fdf5e6;
+    margin: 0;
+}
+
+.row .col.s-half {
+    width: 4.16%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.row .col.s-75 {
+    width: 6%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.norexImg img {
+    width: 140px;
+}
+
+nav ul .large-text {
+    font-size: 20px !important;
+}
+
+.custom-container {
+    display: block;
+    margin: 50px auto;
+    width: 30vw;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.custom-inner-login {
+    position: relative;
+    margin: 0 auto;
+}
+
+label {
+    color: #444 !important;
+}
+
+.small-text-custom {
+    font-size: 0.8rem;
+    position: relative;
+    top: -10px;
+}
+
+/*begin:home*/
+.home-nav-card{
+    margin: 0 auto;
+    width: 100%;
+    height: 60vh;
+    background: url("../img/background.jpg");
+    background-size: cover  ;
+}
+.home-nav-card .home-logo{
+    margin-bottom: 15px;
+    margin-top:40px;
+}
+.home-nav{
+position: absolute;
+
+}
+/*end:home*/
+/*start: hearder*/
+.header-nav-card {
+    margin: 0 auto;
+    width: 100%;
+    height: 40px;
+    background: url("../img/header-back.png");
+}
+
+.header-nav-card img {
+    margin-top: 40px;
+}
+
+.header-title{
+    font-size: 30px;
+}
+
+/*end: header*/
+/*start: inventory view*/
+
+.inventory-item-search {
+    margin: 10px;
+}
+
+.inventory-item-search .col {
+    margin: 3px auto;
+}
+
+.incentory-items .collapsible-body {
+    background-color: #fff;
+}
+
+.inventory-item-title {
+    margin: 0;
+}
+
+.incentory-items {
+    margin: 0;
+}
+
+.inventory-item-add {
+    margin: auto;
+    width: 90%;
+}
+
+.inventory-item-add .s2 {
+    width: 20% !important;
+}
+
+.inventory-tab.row .col {
+    padding: 0;
+}
+
+.inventory-tab .tab a {
+    color: #333;
+}
+
+.inventory-tab .tabs .indicator {
+    background-color: #666;
+}
+
+/*end :inventory view*/
+/*begin: order view*/
+.order-items {
+    margin: 0;
+}
+
+#buffer-order-title {
+    line-height: 24px;
+    padding: 10px 0 0 1rem;
+}
+
+.buffer-order-tuples {
+    padding: 10px 0 0 1rem;
+    line-height: 24px;
+}
+
+.bom {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.order {
+    background-color: rgba(0, 0, 255, 0.2);
+}
+
+.instock {
+    background-color: rgba(0, 255, 0, 0.2);
+}
+
+.order-items .collapsible-body.bom {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.order-items .collapsible-body.order {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.order-items .collapsible-body.instock {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+.place-order-footer {
+    position: fixed;
+    top: 155px;
+    right: 20px;
+    z-index: 100;
+}
+
+.hiddendiv.common {
+    display: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: transparent;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+.modal-content {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideIn {
+    from {
+        bottom: -300px;
+        opacity: 0
+    }
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/*end: order view*/
+/*start: admin view*/
+
+.admin-fatch-norex {
+    margin: 10px;
+}
+
+.admin-list-user {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+.admin-tab.row .col {
+    padding: 0;
+}
+
+.admin-tab .tab a {
+    color: #333;
+}
+
+.admin-tab .tabs .indicator {
+    background-color: #666;
+}
+
+/*end :admin view*/
+
+/*begin: print view*/
+.not-printing-dim {
+    font-size: 30px;
+}
+
+.printing-dim {
+    /*visibility: hidden;*/
+}
+
+.printing-dim .top-logo {
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0 auto 0 auto;
+    }
+
+    .printing-dim {
+        visibility: visible;
+        page-break-after: always;
+        font-size: 20px;
+    }
+
+    .printing-dim .top-logo {
+        margin-left: 20px;
+        width: 100px;
+        height: auto;
+    }
+
+    .printing-dim .title {
+        margin: 10px auto;
+        font-size: 30px;
+    }
+
+    .printing-dim .values {
+        font-size: 24px;
+    }
+
+    .printing-dim tr td {
+        margin: 0;
+        padding: 10px 0 0 0;
+        /*border: 1px solid gray;*/
+    }
+
+    .not-printing-dim {
+        display: none;
+    }
+}
+
+/*end: print view*/
+/*begin printing PO*/
+
+.printingPO {
+    /*font-size: 14px;*/
+    /*visibility: hidden;*/
+}
+
+.printingPO .top-logo {
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0 auto 0 auto;
+    }
+
+    .printingPO {
+        visibility: visible;
+        page-break-after: always;
+        /*font-size: px;*/
+    }
+
+    .printingPO .top-logo {
+        margin-left: 20px;
+        width: 100px;
+        height: auto;
+    }
+
+    .printingPO .title {
+        position: absolute;
+        /*top: 10px;*/
+        width: 100% !important;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .printingPO .values {
+        font-size: 24px;
+    }
+
+    .printingPO table tr td, th {
+        text-align: center;
+        padding: 0;
+        border: 1px solid gray;
+    }
+
+    .not-printing-dim {
+        display: none;
+    }
+
+    .PONumber {
+        position: absolute;
+        top: 130px;
+        right: 100px;
+
+    }
+}
+
+/*end printing PO*/
+/*begin:printing allocate Location Tag*/
+@media print {
+    .hide-while-printing {
+        display: none;
+    }
+}
+
+/*end:printing allocate Location Tag*/
+
+.collapsible-header {
+    line-height: normal;
+}
+
+.manifestOrder .row {
+    margin-bottom: 0;
+}
+
+.manifestOrder input {
+    margin: 0;
+    height: auto;
+}
+
+.manifest #orderData {
+    height: 100%;
+    overflow: auto;
+}
+
+.manifest #manifestData {
+    height: 100%;
+    overflow: auto;
+}
+
+.manifest {
+    height: 430px;
+}
+
+#ajax_table {
+    line-height: normal;
+}
+
+#ajax_table .row {
+    margin-bottom: 10px;
+}
+
+@media (min-height: 35.875em) {
+    .picker--opened .picker__frame {
+        top: 5%;
+        bottom: auto;
+    }
+}

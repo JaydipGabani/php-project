@@ -1,0 +1,39 @@
+{{#each bomdata}}
+<form action="{{../server}}{{../BomDelete}}" method="post">
+<ul class="order-items collapsible" data-collapsible="accordion">
+             <li>
+                 <div class="collapsible-header bom">
+                     <div class="row">
+                         <div class="col s2">
+                             {{Projectid}}
+                         </div>
+                         <div class="col s2">
+                             {{NorexID}}
+                         </div>
+                         <div class="col s2">
+                            {{AstroDieNo}}
+                         </div>
+                         <div class="col s">
+                             {{Qty}}
+                         </div>
+                         <div class="col s2">
+                             {{Color}}
+                         </div>
+						 <div class="col s2">
+                             <input type="hidden" name="Norex" value="{{NorexID}}">
+                             <input type="hidden" name="Color" value="{{Color}}">
+                             <input type="hidden" name="pid" value="{{Projectid}}">
+                             <input type="submit" value="D" class="btn">
+                         </div>
+                     </div>
+                 </div>
+                 <div class="collapsible-body bom">
+                     <div class="row">
+                         <div class="col s1">
+                         </div>
+                     </div>
+                 </div>
+             </li>
+</ul>
+</form>
+{{/each}}

@@ -1,0 +1,149 @@
+{{#each manifestData}}
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="manifestOrder collapsible-header blue lighten-4">
+                <div class="row blue lighten-3">
+                    <div class="col s1">
+                        PID:{{NBP}}
+                    </div>
+                    <div class="col s2">
+                        Job Name:
+                    </div>
+                    <div class="col s2">
+                        Astro:
+                    </div>
+                    <div class="col s2">
+                        Keymark:
+                    </div>
+                    <div class="col s5">
+                        Description:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s1">
+                        PO:{{PO}}
+                    </div>
+                    <div class="col s2">
+                        {{pname}}
+                    </div>
+                    <div class="col s2">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s2">
+                        {{KeymarkDieNo}}
+                    </div>
+                    <div class="col s5">
+                        {{Part_Description}}
+                    </div>
+                </div>
+                <div class="row blue lighten-3">
+                    <div class="col s6">
+                        Finish:
+                    </div>
+                    <div class="col s1">
+                        Qty:
+                    </div>
+                    <div class="col s1">
+                        Length:
+                    </div>
+                    <div class="col s2">
+                        WtxFt:
+                    </div>
+                    <div class="col s2">
+                        NetWt:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Pcs}}
+                    </div>
+                    <div class="col s1">
+                        {{Length}}
+                    </div>
+                    <div class="col s2">
+                        {{Ft}}
+                    </div>
+                    <div class="col s2">
+                        {{NetWt}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s1">
+                        Date:{{ShipD}}
+                    </div>
+                    <div class="col s1">
+                        NorexID:{{NorexID}}
+                    </div>
+                    <div class="col s2">
+                        Location:{{locationConverter Location}}
+                    </div>
+                    <div class="col s2">
+                        Location on Site{{LocOnSite}}
+                    </div>
+                    <div class="col s2">
+                        Model: {{Model}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button class="myBtn btn right" somedata="{{@index}}">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="place-order-footer card">
+        <!-- The Modal -->
+        <div id="myModal{{@index}}" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h5>Edit tuple</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="{{../server}}{{../editTuple}}" method="post">
+                        <input type="hidden" name="Barcode" value="{{Barcode}}">
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <input type="date" value="{{ShipD}}" name="ShipD" class="datepicker" id="Date">
+                                <label for="Date">Date</label>
+                            </div><div class="input-field col s1">
+                                <input type="text" name="LocOnSite" value="{{LocOnSite}}">
+                                <label for="first_name">Loc On Site</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="AstroDieNo" value="{{AstroDieNo}}">
+                                <label for="first_name">Astro Die</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="KeymarkDieNo" value="{{KeymarkDieNo}}">
+                                <label for="first_name">Keymark Die</label>
+                            </div>
+                            <div class="input-field col s4">
+                                <input type="text" name="Finish" value="{{Finish}}">
+                                <label for="first_name">Finish</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="Qty" value="{{Pcs}}">
+                                <label for="first_name">Qty</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="Length" value="{{Length}}">
+                                <label for="first_name">Length</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="submit" value="Submit" class="Btn">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end:placeorder-->
+{{/each}}

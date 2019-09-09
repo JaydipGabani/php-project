@@ -1,0 +1,54 @@
+{{#each dataToPrint}}
+    <div class="container printing-dim">
+        <hr>
+        <img src="<?php echo base_url();?>application/img/logo.svg" alt="">
+        <hr>
+        <div class="row">
+            <div class="col s6">
+                Date
+                <br>
+                Location:
+                <br>
+                # of Pcs
+                <br>
+                Length
+                <br>
+                Color
+                <br>
+                Extruder
+                <br>
+                EASCO
+                <br>
+                Keymark
+                <br>
+                Astro
+                <br>
+                NORTHERN
+                <br>
+                model
+                <br>
+                Description
+            </div>
+            <div class="col s6">
+                BARCODE
+                <br>
+                <img id="barcode{{@index}}"/>
+                <br>
+                TAG NO
+                <br>
+                NOREX ID
+                <br>
+                Drawing
+                <br>
+                <img src="<?php echo base_url();?>application/norexIMG/11001.jpg" height="200px" width="200px" alt="">
+            </div>
+        </div>
+
+    </div>
+    <script>
+        JsBarcode("#barcode{{@index}}", "241660111111", {
+            format: "ean13",
+            flat: true
+        });
+    </script>
+{{/each}}

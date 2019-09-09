@@ -1,0 +1,85 @@
+{{#each manifestData}}
+    <ul class="collapsible" data-collapsible="accordion">
+        <li>
+            <div class="manifestOrder collapsible-header blue lighten-4">
+                <div class="row blue lighten-3">
+                    <div class="col s2 deep-orange lighten-3">
+                        <input type="number" id="no{{@index}}" value="" class="manifestInputNo" data-barcode="{{Barcode}}" data-other-info="{{NBP}}|{{Pcs}}|{{Part_Description}}|{{Die}}|{{KeymarkDieNo}}|{{Finish}}|{{Ft}}|{{Length}}|{{NetWt}}|{{NorexId}}|{{PO}}|{{Barcode}}|{{ShipD}}|{{Model}}">
+                    </div>
+                    <div class="col s4">
+                        PID:
+                    </div>
+                    <div class="col s2">
+                        NID:
+                    </div>
+                    <div class="col s2">
+                        Astro:
+                    </div>
+                    <div class="col s2">
+                        Keymark:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s2">
+                        PO:{{PO}}
+                    </div>
+                    <div class="col s4">
+                        {{NBP}}-ProjectName
+                    </div>
+                    <div class="col s2">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s2">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s2">
+                        {{KeymarkDieNo}}
+                    </div>
+                </div>
+                <div class="row blue lighten-3">
+                    <div class="col s6">
+                        Finish:
+                    </div>
+                    <div class="col s1">
+                        Qty:
+                    </div>
+                    <div class="col s1">
+                        WtxFt:
+                    </div>
+                    <div class="col s2">
+                        Length:
+                    </div>
+                    <div class="col s2">
+                        NetWt:
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Pcs}}
+                    </div>
+                    <div class="col s1">
+                        {{Length}}
+                    </div>
+                    <div class="col s2">
+                        {{Ft}}
+                    </div>
+                    <div class="col s2">
+                        {{NetWt}}
+                    </div>
+                </div>
+                <div class="row blue lighten-4">
+                    <div class="col s12">
+                        Description:{{Part_Description}}
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+
+    <!--end:placeorder-->
+
+{{/each}}

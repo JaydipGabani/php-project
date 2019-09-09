@@ -1,0 +1,111 @@
+{{#each orderdata}}
+    <ul class="order-items collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header bom green lighten-5 buffer-order-tuples">
+                <div class="row">
+                    <div class="col s-half">
+                        <!--checkbox-->
+                        <input type="checkbox" name="bufferOrderCheckbox" class="filled-in" onclick="selectCheckbox()" id="checkbox{{@index}}" value="{{No}}" />
+                        <label for="checkbox{{@index}}"></label>
+                    </div>
+                    <div class="col s-75">
+                        {{Projectid}}
+                    </div>
+                    <div class="col s1">
+                        ProjectName
+                    </div>
+                    <div class="col s1">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s1">
+                        {{Description}}
+                    </div>
+                    <div class="col s1">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{KeymarkDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Qty}}
+                    </div>
+                    <div class="col s1">
+                        {{WeightxFeet}}
+                    </div>
+                    <div class="col s1">
+                        {{OrderLength}}
+                    </div>
+                    <div class="col s1">
+                        {{TotalLbs}}
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <form action="{{../server}}{{../deleteOrder}}" method="post">
+                            <input type="hidden" name="No" value="{{No}}">
+                            <button type="submit" class="btn right" style="margin:0 10px 0 10px;">Delete</button>
+                        </form>
+                        <button  class="myBtn btn right" somedata="{{@index}}">Change</button>
+                        <div class="input-field right">
+                            <input type="number" value="{{Qty}}" id="extruder-value{{No}}" class="validateQty" onchange="selectCheckbox()" data-Qty="{{Qty}}">
+                            <label for="extruder-value{{No}}">Order Qty</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="collapsible-body bom"></div>-->
+        </li>
+    </ul>
+
+    <div class="place-order-footer card">
+
+        <!-- The Modal -->
+        <div id="myModal{{@index}}" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h5>Change Order</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="{{../server}}{{../ChangeOrder}}" method="post">
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <input type="text" name="NorexID" class="validate" id="orderNorex{{@index}}" value="{{NorexID}}" required>
+                                <label for="first_name">Norex ID</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" name="Finish" class="validate" id="orderColor{{@index}}" value="{{Finish}}"  required>
+                                <label>Color</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="number" name="Projectid" class="validate" id="orderProject{{@index}}" value="{{Projectid}}" required>
+                                <label>ProjectId</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="number" name="Qty" class="validate" id="orderQty{{@index}}" value="{{Qty}}" required>
+                                <label for="first_name">Qty</label>
+                            </div>
+                            <div id="weight{{@index}}" class="input-field col s1">
+                                {{WeightxFeet}}
+                            </div>
+                            <div id="orderLength{{@index}}" class="input-field col s1">
+                                {{OrderLength}}
+                            </div>
+                            <div class="input-field col s1">
+                                <span id="totallbs{{@index}}">NaN</span>
+                            </div>
+                            <div class="btn refreshLbs col s1 ">R</div>
+                            <input type="submit" name="submit" value="change order" class="btn col"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}

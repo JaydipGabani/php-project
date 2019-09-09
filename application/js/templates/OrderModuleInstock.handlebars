@@ -1,0 +1,53 @@
+{{#each instockdata}}
+    <ul class="order-items collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header instock">
+                <div class="row">
+                    <div class="col s2">
+                    {{Norex}}
+                    </div>
+                    <div class="col s2">
+                        {{Color}}
+                    </div>
+                    <div class="col s2">
+                        {{Location}}
+                    </div>
+                    <div class="col s2">
+                        {{LocOnSite}}
+                    </div>
+                    <div class="col s2">
+                        {{Qty}}
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-body instock">
+                <form action="{{../server}}{{../InStock}}" method="post">
+                    <div class="row">
+                        <div class="col s4">
+                            <div class="input-field">
+                                <input type="hidden" name="Norex" value="{{Norex}}">
+                                <input type="hidden" name="Color" value="{{Color}}">
+                                <input type="hidden" name="Qty" value="{{Qty}}">
+                                <input type="hidden" name="Location" value="{{Location}}">
+                                <input type="hidden" name="LocOnSite" value="{{LocOnSite}}">
+                                <input type="text" name="Pid">
+                                <label>projectID</label>
+                            </div>
+                        </div>
+                        <div class="col s4">
+                            <div class="input-field">
+                                <input type="text" name="Rqty">
+                                <label>Allocating Qty</label>
+                            </div>
+                        </div>
+                        <div class="col s4 center">
+                            <div class="input-field">
+                                <input type="submit" value="A" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+{{/each}}

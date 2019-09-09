@@ -1,0 +1,134 @@
+{{#each bomdata}}
+    <ul class="order-items collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header bom" id="collapsible-header{{@index}}">
+                <div class="row">
+                    <div class="col s1">
+                        {{Projectid}}
+                    </div>
+                    <div class="col s1">
+                        ProjectName
+                    </div>
+                    <div class="col s1">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s1">
+                        {{Description}}
+                    </div>
+                    <div class="col s1">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{KeymarkDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Qty}}
+                    </div>
+                    <div class="col s1" id="RQty{{@index}}">
+                        {{RQty}}
+                    </div>
+                    <div class="col s1">
+                        {{WeightxFeet}}
+                    </div>
+                    <div class="col s1">
+                        {{OrderLength}}
+                    </div>
+                    <div class="col s1">
+                        {{TotalLbs}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button class="myBtn btn right" somedata="{{@index}}">Place Order</button>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-body bom">
+                <div class="row">
+                    <div class="col s1">
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="place-order-footer card">
+
+        <!-- The Modal -->
+        <div id="myModal{{@index}}" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h5>Place Order</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="{{../server}}{{../PlaceOrder}}" method="post">
+                        <input type="hidden" name="AstroDieNo" value="{{AstroDieNo}}">
+                        <input type="hidden" name="KeymarkDieNo" value="{{KeymarkDieNo}}">
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <input type="text" name="norexId" class="validate" id="orderNorex{{@index}}"
+                                       value="{{NorexID}}" required>
+                                <label for="first_name">Norex ID</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" name="Finish" class="validate" id="orderColor{{@index}}"
+                                       value="{{Finish}}" required>
+                                <label>Color</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="number" name="Projectid" class="validate" id="orderProject{{@index}}"
+                                       value="{{Projectid}}" required>
+                                <label>ProjectId</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="hidden" name="Qty" class="validate" id="orderQty{{@index}}"
+                                       value="{{Qty}}">
+                                <label for="first_name">Qty</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="number" name="RQty" class="validate" id="orderRQty{{@index}}"
+                                       value="{{RQty}}" required>
+                                <label for="first_name">RQty</label>
+                            </div>
+                            <div id="weight{{@index}}" class="input-field col s1">
+                                {{WeightxFeet}}
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="OrderLength" class="validate" id="orderLength{{@index}}"
+                                       value="{{OrderLength}}" required>
+                                <label for="first_name">Length</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <span id="totallbs{{@index}}">NaN</span>
+                            </div>
+                            <div class="btn refreshLbs col s1 ">R</div>
+                            <input type="submit" value="place-order" class="btn col"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!--end:placeorder-->
+
+    <script>
+        if ($('#orderRQty{{@index}}').val() == 0) {
+            $('#collapsible-header{{@index}}').css("background-color", "#c8e6c9");
+        }
+        else if ($('#orderRQty{{@index}}').val() == $('#orderQty{{@index}}').val()) {
+            $('#collapsible-header{{@index}}').css("background-color", "#ffcdd2");
+        }
+        else {
+            $('#collapsible-header{{@index}}').css("background-color", "#e3f2fd");
+        }
+    </script>
+{{/each}}

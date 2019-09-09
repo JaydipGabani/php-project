@@ -1,0 +1,108 @@
+{{#each bufferBOMData}}
+    <ul class="order-items collapsible" data-collapsible="accordion">
+        <li>
+            <div class="collapsible-header bom red lighten-5">
+                <div class="row">
+                    <div class="col s1">
+                        {{Projectid}}
+                    </div>
+                    <div class="col s1">
+                        ProjectName
+                    </div>
+                    <div class="col s1">
+                        {{NorexID}}
+                    </div>
+                    <div class="col s1">
+                        {{Description}}
+                    </div>
+                    <div class="col s1">
+                        {{AstroDieNo}}
+                    </div>
+                    <div class="col s1">
+                        {{KeymarkDieNo}}
+                    </div>
+                    <div class="col s2">
+                        {{Finish}}
+                    </div>
+                    <div class="col s1">
+                        {{Qty}}
+                    </div>
+                    <div class="col s1">
+                        {{WeightxFeet}}
+                    </div>
+                    <div class="col s1">
+                        {{OrderLength}}
+                    </div>
+                    <div class="col s1">
+                        {{TotalLbs}}
+                    </div>
+
+                </div>
+                <div class="row">
+
+                    <div class="col s12">
+                        <form action="{{../server}}{{../deleteBufferBOM}}" method="post">
+                            <input type="hidden" name="No" value="{{No}}">
+                            <button type="submit" class="btn right" style="margin:0 10px 0 10px;">Delete</button>
+                        </form>
+                        <button  class="myBtn btn right" somedata="{{@index}}">Change</button>
+                    </div>
+                </div>
+            </div>
+            <div class="collapsible-body bom">
+                <div class="row">
+                    <div class="col s1">
+
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="place-order-footer card">
+
+        <!-- The Modal -->
+        <div id="myModal{{@index}}" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h5>Change BOM</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="{{../server}}{{../ChangeBufferBOM}}" method="post">
+                        <div class="row">
+                            <div class="input-field col s1">
+                                <input type="number" name="Projectid" class="validate" value="{{Projectid}}" required>
+                                <label>ProjectId</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="number" name="ProjectName" class="validate" value="{{Projectid}}" required>
+                                <label>ProjectName</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="hidden" name="No" class="validate" value="{{No}}">
+                                <input type="text" name="NorexID" class="validate" value="{{NorexID}}" required>
+                                <label for="first_name">Norex ID</label>
+                            </div>
+                            <div class="input-field col s2">
+                                <input type="text" name="Finish" class="validate" value="{{Finish}}"  required>
+                                <label>Color</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="number" name="Qty" class="validate" value="{{Qty}}" required>
+                                <label for="first_name">Qty</label>
+                            </div>
+                            <div class="input-field col s1">
+                                <input type="text" name="OrderLength" class="validate" value="{{OrderLength}}" required>
+                                <label for="first_name">Order Length</label>
+                            </div>
+                            <input type="submit" name="submit" class="btn col"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}
